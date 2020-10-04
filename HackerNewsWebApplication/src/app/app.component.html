@@ -1,0 +1,66 @@
+<mat-card class="definitions-card">
+  <mat-card-header>
+
+    <div fxFlex fxlayout="column" fxLayoutAlign="start center">
+
+      <div fxFlex class="filter-header" fxlayout="row" fxLayoutAlign="start center">
+
+        <div fxFlex [formGroup]="queryParamsForm">
+          <mat-form-field style="min-width: 200px;">
+            <input #searchElement matInput placeholder="Search" formControlName="Search">
+            <button *ngIf="controlHasValue('Search')" (click)="clearValue('Search')" mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row">
+          <button matTooltip="Refresh" (click)="reload()" mat-icon-button>
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <button matTooltip="Cancel" (click)="cancel()" mat-icon-button>
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="table-container mat-elevation-z8"
+      [ngStyle]="{'height': loading && (!results || !results.length) ? '120.56px' : 'calc(100vh - 120px)'}"
+      definitions-list>
+     <mat-progress-bar style="top:83px;" *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+      <mat-table [ngStyle]="{'height': loading && (!results || !results.length) ? '0px' : ''}" #table id="table" [dataSource]="dataSource">
+        <ng-container *ngFor="let column of columnNames" matColumnDef="{{column}}">
+          <mat-header-cell *matHeaderCellDef>
+            <h3 class="md-headline">{{columnNamesAndDisplayedNames[column] | uppercase}}</h3>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <div fxLayout="column">
+              <div *ngIf="element.title" fxLayout="row">
+                <h2 *ngIf="!element.url">{{element.title}}</h2>
+                <a  *ngIf="element.url" target="_blank" href="{{element.url}}" > <h2>{{element.title}}</h2></a>
+                <a *ngIf="element.url"  target="_blank" href="{{getBaseUrl(element)}}"><h4 matTooltip="{{getHostName(element)}}">&nbsp;({{getHostName(element)}})</h4></a>
+              </div>
+              <div *ngIf="element.score && element.by && element.time" fxLayout="row">
+                <h4>{{element.score}} points by {{element.by}} {{timeSince(element.time)}}</h4>
+              </div>
+              <div *ngIf="!element.title" fxLayout="row">
+                <h4>Loading item...</h4>
+              </div>
+            </div>
+
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="propertyNames; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: propertyNames;"></mat-row>
+      </mat-table>
+      <h3 *ngIf="!loading && (!results || results.length < 1)" class="md-headline">No news to show at this
+        moment</h3>
+      <mat-paginator class="mat-paginator-sticky" [length]="totalResults" [pageSize]="pageSize" [pageSizeOptions]="_config.PAGE_SIZE_OPTIONS"
+        (page)="onPageChange($event)">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

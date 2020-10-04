@@ -1,0 +1,12 @@
+{
+  "appDetails": {
+    "version": "1.0.0",
+    "appName": "HackerNews with Material Design"
+  },
+  "webApi": {
+		"baseUrl": "http://localhost:35072"
+  },
+  "settings": {
+    "pageSizeOptions": [10, 25, 50]
+  }
+}

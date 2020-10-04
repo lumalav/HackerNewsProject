@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.highlight {
+  color: #d32f2f;
+}
+
+.mat-table {
+  overflow: auto;
+}
+
+.mat-header-cell {
+  color: #78909c;
+}
+
+.filter-header {
+  /* min-height: 64px; */
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  /* width: 90%; */
+}
+
+.mat-column-select {
+  overflow: visible;
+}
+
+.mat-card {
+  background: rgb(243,246,249);
+  color: rgba(0,0,0,.87);
+}
+
+button.mat-fab {
+  margin-left: 90%;
+  position: absolute;
+  top: 32px;
+}
+
+mat-card-header.mat-card-header {
+  min-height: 40px;
+}
+
+mat-row.mat-row.ng-star-inserted:hover {
+  background-color: rgb(243,246,249);
+}
+.md-title {
+  color: #415159;
+}
+h3.md-headline.ng-star-inserted {
+  padding: 0 24px;
+}
+
+mat-progress-bar {
+  width: calc(100% - 3em);
+  position: absolute;
+  top: 10.6em;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+mat-table > mat-row > mat-cell.mat-cell.cdk-column-DisplayName.mat-column-DisplayName.ng-star-inserted > div > h4 {
+  /* white-space: nowrap;
+  overflow: hidden; */
+}
+
+mat-cell {
+  overflow: visible;
+  margin-right: 5px;
+  /* margin-left: 5px; */
+}
+
+ .mat-paginator-sticky {
+  /* bottom: 0px;
+  position: sticky;
+  z-index: 10; */
+  flex: auto;
+  /* position: relative; */
+}
+
+.table-container {
+  overflow: auto;
+}
+
+/deep/ snack-bar-container.red-snackbar {
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/deep/ .red-snackbar .mat-simple-snackbar {
+ color: #F44336;
+ font-weight: bold;
+ background: white;
+}
+
+/deep/ .red-snackbar .mat-button-wrapper {
+ color: #F44336;
+ font-weight: bold;
+}
+
+/deep/ snack-bar-container.grey-snackbar {
+  background: #b0bec5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/deep/ .grey-snackbar .mat-simple-snackbar {
+ color: white;
+ font-weight: bold;
+ background: #b0bec5;
+}
+
+/deep/ .grey-snackbar .mat-button-wrapper {
+ color: white;
+ font-weight: bold;
+}
