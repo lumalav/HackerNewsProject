@@ -1,6 +1,4 @@
 # HackerNewsProject
-Please check the entire project at: https://wonderful-hill-02edb720f.azurestaticapps.net/#/
-
 Features:
 
 - [x] A list of the newest stories
@@ -17,4 +15,4 @@ Features:
 
 - [x] Caching of the newest stories
 
-- [x] If you're up for it, upload your code challenge to an Azure website and send us the link!  Azure websites have free trial periods so you don't have to pay a dime :)
+- [x] If you're up for it, upload your code challenge to an Azure website and send us the link!  Azure websites have free trial periods so you don't have to pay a dime :) https://wonderful-hill-02edb720f.azurestaticapps.net/#/
