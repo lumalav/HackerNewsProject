@@ -117,7 +117,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.destroy2$ = new Subject();
     let items = null;
     this.loadItemSubject.concatMap(i => {
-      items = i;
+      items = i.filter(j => !j.hasOwnProperty('title'));
       return forkJoin(items.map(j => this._dataService.loadNews(j)));
     }).pipe(takeUntil(this.destroy2$))
     .subscribe(result => {

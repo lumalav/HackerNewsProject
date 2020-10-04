@@ -118,6 +118,39 @@ namespace HackerNewsTask.Controllers
 
                 _cache.Set(entry, cacheEntry, new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromMinutes(_fetchNewsCacheExpirationTimeInMinutes)));
+            } 
+            else if (queryType == QueryType.PagedQuery || queryType == QueryType.SearchedQuery)
+            {
+                //we hit on some ids. Maybe we can hit on the entire object as well
+                var cachedEntries = new List<dynamic>();
+
+                var items = queryType == QueryType.PagedQuery
+                    ? (dynamic[]) cacheEntry
+                    : (dynamic[]) ((dynamic) cacheEntry).Results;
+
+                foreach (var item in items)
+                {
+                    var entry2 = ((long) item.Id).ToString();
+
+                    if (_cache.TryGetValue(entry2, out object cacheEntry2))
+                    {
+                        cachedEntries.Add(cacheEntry2);
+                    }
+                }
+
+                if (cachedEntries.Any())
+                {
+                    if (queryType == QueryType.PagedQuery)
+                    {
+                        return cachedEntries;
+                    }
+
+                    return new
+                    {
+                        ((dynamic) cacheEntry).Total,
+                        Results = cachedEntries
+                    };
+                }
             }
 
             return cacheEntry;
