@@ -1,7 +1,5 @@
 # HackerNewsProject
 
-Please check the website at: https://wonderful-hill-02edb720f.azurestaticapps.net/#/
-
 Features:
 
 - [x] A list of the newest stories
@@ -18,4 +16,5 @@ Features:
 
 - [x] Caching of the newest stories
 
-- [x] Azure website -> https://wonderful-hill-02edb720f.azurestaticapps.net/#/
+- [x] [Azure website](https://wonderful-hill-02edb720f.azurestaticapps.net/#/
+)
