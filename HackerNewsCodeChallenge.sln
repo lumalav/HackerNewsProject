@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNewsTask", "HackerNewsTask\HackerNewsTask.csproj", "{1662E6A0-CB8A-4145-AA11-DDAA9095D6A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerNewsTaskTests", "HackerNewsTaskTests\HackerNewsTaskTests.csproj", "{8BA4ABD1-EBE4-4D19-9CD0-C7BE272FD639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerNewsTaskTests", "HackerNewsTaskTests\HackerNewsTaskTests.csproj", "{8BA4ABD1-EBE4-4D19-9CD0-C7BE272FD639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
