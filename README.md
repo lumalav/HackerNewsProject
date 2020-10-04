@@ -1,13 +1,9 @@
 # HackerNewsProject
 Please check the entire project at: https://wonderful-hill-02edb720f.azurestaticapps.net/#/
 
-Your solution must be developed using an Angular front-end app that calls a C# .NET Core back-end restful API.
+Feature:
 
- 
-
-At a minimum, the front-end UI should consist of:
-
-* A list of the newest stories
+- [x] A list of the newest stories
 
 * Each list item should include the title and a link to the news article.  Watch out for stories that do not have hyperlinks!
 
