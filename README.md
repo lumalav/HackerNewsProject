@@ -15,6 +15,3 @@ Features:
 - [x] Usage of dependency injection
 
 - [x] Caching of the newest stories
-
-- [x] [Azure website](https://wonderful-hill-02edb720f.azurestaticapps.net/#/
-)
